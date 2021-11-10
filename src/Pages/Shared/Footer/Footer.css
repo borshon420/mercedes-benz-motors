@@ -1,0 +1,41 @@
+.footer-container {
+    background-color: #232628;
+    height: 250px;
+  }
+  
+  .footer-container-2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #232628;
+    height: 200px;
+    padding-top: 30px;
+    color: white;
+    text-align: left;
+  }
+
+  .footer-container-2 p {
+      line-height: 10px;
+  }
+  
+  .footer-container h5 {
+    color: white;
+    font-weight: 300;
+  }
+  
+  /* Make Responsive */
+  @media only screen and (max-width: 688px) {
+    .footer-container-2 img {
+      display: none;
+      height: 100px;
+    }
+    .footer-container-2 p {
+        line-height: 15px;
+        font-size: 10px;
+    }
+    
+    .footer-container h5 {
+      color: white;
+      font-size: 16px;
+      font-weight: 200;
+    }
+  }

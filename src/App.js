@@ -7,10 +7,18 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import BuyNow from './Pages/Home/BuyNow/BuyNow';
+import Products from './Pages/Home/Products/Products';
+import Explore from './Pages/Explore/Explore/Explore';
+import Login from './Pages/Login/Login/Login';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Register from './Pages/Login/Register/Register';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <Router>
       <Switch>
           <Route exact path="/">
@@ -19,11 +27,24 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/buynow/:id">
-            <BuyNow />
+          <Route path="/explore">
+            <Explore />
           </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <PrivateRoute path="/buynow/:id">
+            <BuyNow />
+          </PrivateRoute>
         </Switch>
       </Router>
+      </AuthProvider>
     </div>
   );
 }

@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import Product from "../Product/Product";
-import './Products.css';
+import Product from "../../Home/Product/Product";
+import Navigation from "../../Shared/Navigation/Navigation";
 
 
-const Products = () => {
+const Explore = () => {
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('http://localhost:5000/products/explore')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[])
-  return (
-    <div>
-        <div className="my-5">
+    return (
+        <div>
+            <Navigation></Navigation>
+            <div>
+            <div className="my-5">
             <h2>Our Cars</h2>
         </div>
         <Container>
@@ -27,7 +29,8 @@ const Products = () => {
         </div>
         </Container>
     </div>
-  );
+        </div>
+    );
 };
 
-export default Products;
+export default Explore;
