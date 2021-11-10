@@ -14,7 +14,7 @@ const Products = () => {
   return (
     <div>
         <div className="my-5">
-            <h2>Our Cars</h2>
+            <h2>RECENT <span style={{ color: "#FFB129" }}>CARS</span></h2>
         </div>
         <Container>
         <div className="products-container">

@@ -10,7 +10,7 @@ import Rating from "@mui/material/Rating";
 const Reviews = () => {
   return (
     <div className="my-5">
-      <h1 className="my-5">This is reviews</h1>
+      <h1 className="my-5">MERCEDES BENZ <span style={{ color: "#FFB129" }}>REVIEWS</span></h1>
       <Container className="review-conteiner">
         <Card style={{height: '320px'}} className="review-content">
           <Card.Img variant="top" src={review1} />
