@@ -26,6 +26,7 @@ import useAuth from "../../../hooks/useAuth";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 import AddProducts from "../AddProducts/AddProducts";
+import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
 const drawerWidth = 200;
 
 function Dashboard(props) {
@@ -49,6 +50,7 @@ function Dashboard(props) {
       {admin && <Box>
         <Link style={{display: 'block'}}  to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
         <Link style={{display: 'block'}}  to={`${url}/addProducts`}><Button color="inherit">Add Products</Button></Link>
+        <Link style={{display: 'block'}}  to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link>
           </Box>}
       <Button onClick={logOut} variant="contained">Logout</Button>
     </div>
@@ -141,6 +143,9 @@ function Dashboard(props) {
         </AdminRoute>
         <AdminRoute path={`${path}/addProducts`}>
           <AddProducts></AddProducts>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manageAllOrders`}>
+          <ManageAllOrders></ManageAllOrders>
         </AdminRoute>
         <Route path={`${path}/myorder`}>
           <MyOrders></MyOrders>

@@ -49,7 +49,6 @@ const BuyNow = () => {
             <Card.Text>{details.description}</Card.Text>
             <Card.Title>Price: ${details.price}</Card.Title>
           </Card.Body>
-          <Button  variant="primary">Buy Now</Button>
         </Card>
       </Container>
       </div>
@@ -79,7 +78,7 @@ const BuyNow = () => {
             placeholder="Phone"
             required
           />
-          <input type="submit" value="Booking Now" />
+          <input type="submit" value="Buy Now" />
         </form>
       </div>
     </div>
