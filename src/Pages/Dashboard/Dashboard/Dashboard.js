@@ -6,12 +6,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -29,10 +23,13 @@ import Pay from "../Pay/Pay";
 import MyOrders from "../MyOrders/MyOrders";
 import Review from "../Review/Review";
 import useAuth from "../../../hooks/useAuth";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import AdminRoute from "../../Login/AdminRoute/AdminRoute";
+import AddProducts from "../AddProducts/AddProducts";
 const drawerWidth = 200;
 
 function Dashboard(props) {
-    const {logOut} = useAuth();
+    const {logOut, admin} = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
@@ -49,6 +46,10 @@ function Dashboard(props) {
       <Link style={{display: 'block'}}  to={`${url}/myorder`}><Button color="inherit">My Orders</Button></Link>
       <Link to={`${url}/payment`}><Button color="inherit">Payment</Button></Link>
       <Link style={{display: 'block'}}  to={`${url}/reviews`}><Button color="inherit">Reviews</Button></Link>
+      {admin && <Box>
+        <Link style={{display: 'block'}}  to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+        <Link style={{display: 'block'}}  to={`${url}/addProducts`}><Button color="inherit">Add Products</Button></Link>
+          </Box>}
       <Button onClick={logOut} variant="contained">Logout</Button>
     </div>
   );
@@ -135,6 +136,12 @@ function Dashboard(props) {
         <Route path={`${path}/payment`}>
           <Pay></Pay>
         </Route>
+        <AdminRoute path={`${path}/makeAdmin`}>
+          <MakeAdmin></MakeAdmin>
+        </AdminRoute>
+        <AdminRoute path={`${path}/addProducts`}>
+          <AddProducts></AddProducts>
+        </AdminRoute>
         <Route path={`${path}/myorder`}>
           <MyOrders></MyOrders>
         </Route>
@@ -142,9 +149,7 @@ function Dashboard(props) {
           <Review></Review>
         </Route>
       </Switch>
-        
-        
-      </Box>
+       </Box>
     </Box>
   );
 }
