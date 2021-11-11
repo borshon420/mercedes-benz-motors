@@ -32,7 +32,7 @@ const ManageAllOrders = () => {
     }
     return (
         <div>
-            <h1>My all orders: {products.length}</h1>
+            <h1>Manage all orders: {products.length}</h1>
             <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>

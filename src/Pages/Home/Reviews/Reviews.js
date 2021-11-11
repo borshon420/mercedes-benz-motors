@@ -17,32 +17,14 @@ const Reviews = () => {
     },[])
   return (
     <div className="my-5">
-      <h1 className="my-5">MERCEDES BENZ <span style={{ color: "#FFB129" }}>REVIEWS</span></h1>
+      <h1 className="my-5">SPECIAL <span style={{ color: "#FFB129" }}>REVIEWS</span></h1>
       <Container className="review-conteiner">
         <Card style={{height: '320px'}} className="review-content">
           <Card.Img variant="top" src={review1} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Maria</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Box
-              sx={{
-                "& > legend": { mt: 2 },
-              }}
-            >
-              <Rating name="read-only" value={3} readOnly />
-            </Box>
-          </Card.Body>
-        </Card>
-        <Card className="review-content mt-5">
-          <Card.Img variant="top" src={review3} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+            A few American-based Daimler-Benz dealerships were converted to Mercedes-Benz dealerships when Daimlers non-Mercedes-partnered company closed in 1966.
             </Card.Text>
             <Box
               sx={{
@@ -53,13 +35,28 @@ const Reviews = () => {
             </Box>
           </Card.Body>
         </Card>
+        <Card className="review-content mt-5">
+          <Card.Img variant="top" src={review3} />
+          <Card.Body>
+            <Card.Title>Scott Smith</Card.Title>
+            <Card.Text>
+            Emil Jellinek, an European automobile entrepreneur who worked with Daimler Motoren Gesellschaft (DMG), registered the trademark in 1902, naming the 19
+            </Card.Text>
+            <Box
+              sx={{
+                "& > legend": { mt: 2 },
+              }}
+            >
+              <Rating name="read-only" value={5} readOnly />
+            </Box>
+          </Card.Body>
+        </Card>
         <Card style={{height: '320px'}}  className="review-content">
           <Card.Img variant="top" src={review2} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Sofia</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+            Gottlieb Daimler was born on 17 March 1834 in Schorndorf. After training as a gunsmith and working in France, he attended the Polytechnic School in St
             </Card.Text>
             <Box
               sx={{
@@ -71,7 +68,7 @@ const Reviews = () => {
           </Card.Body>
         </Card>
       </Container>
-      <h1 className="my-5">LEATEST <span style={{ color: "#FFB129" }}>REVIEWS</span></h1>
+      <h1 className="my-5">REGULAR <span style={{ color: "#FFB129" }}>REVIEWS</span></h1>
       <Container className="review-conteiner">
           {
             reviews.map(review => <SingleReview 

@@ -1,13 +1,14 @@
 import React from "react";
 import "./Footer.css";
 import { Container } from "react-bootstrap";
+import footerLogo from '../../../images/logo/benz-motors.png';
 const Footer = () => {
   return (
     <div>
       <div className="footer-container">
         <Container className="footer-container-2">
           <div>
-            <img style={{ height: "100px" }} src="" alt="" />
+            <img style={{ height: "100px" }} src={footerLogo} alt="" />
           </div>
           <div>
             <div className="mb-3 me-2">
@@ -37,6 +38,8 @@ const Footer = () => {
             <p>Sunday: Closed</p>
           </div>
         </Container>
+        
+        <p style={{color: 'white'}}>Copyright © 2021. All Rights reserved by Borshon Arafat</p>
       </div>
     </div>
   );

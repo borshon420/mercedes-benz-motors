@@ -13,8 +13,9 @@ const Products = () => {
     },[])
   return (
     <div>
-        <div className="my-5">
-            <h2>RECENT <span style={{ color: "#FFB129" }}>CARS</span></h2>
+        <div className="my-5 text-content" >
+            <h2>RECENT <span style={{ color: "#FFB129"}}>CARS</span></h2>
+            <p>Mercedes-Benz traces its origins to Karl Benz's<br/> creation of the first internal combustion engine in a car, seen in the Benz Patent<br/> Motorwagen – financed by Bertha Benz's dowry</p>
         </div>
         <Container>
         <div className="products-container">

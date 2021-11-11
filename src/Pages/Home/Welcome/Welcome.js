@@ -8,7 +8,7 @@ import './Welcome.css';
 const Welcome = () => {
   return (
     <div>
-      <div>
+      <div className="my-5">
         <h1>
           WELCOME TO{" "}
           <span style={{ color: "#FFB129" }}>MERCEDES BENZ MOTORS</span>
@@ -26,25 +26,25 @@ const Welcome = () => {
           <Carousel.Item>
             <img className="d-block w-100" src={img1} alt="First slide" />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Mercedes-Benz CLK</h3>
+              <p>France and Europe, especially in winter. His customers included the Rothschild family and other well</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={img2} alt="Second slide" />
 
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Mercedes-Benz YC</h3>
+              <p>But Jellinek's plans went further, in as early as 1901, he was selling Mercedes cars in the "New Wor</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={img3} alt="Third slide" />
 
             <Carousel.Caption>
-              <h3>Third slide label</h3>
+              <h3>Mercedes-Benz CLA</h3>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              Daimler automobiles among the highest circles of society in his adopted home. At the time, it was a
               </p>
             </Carousel.Caption>
           </Carousel.Item>
