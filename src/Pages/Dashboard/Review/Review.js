@@ -53,7 +53,14 @@ const Review = () => {
           />
           
           
-          <input type="submit" value="Give us review" />
+          <input style={{
+                backgroundColor: "#232628",
+                border: "none",
+                color: "white",
+                fontWeight: "bold",
+              }} 
+              type="submit" 
+              value="Give us review" />
         </form>
       </div>
         </div>

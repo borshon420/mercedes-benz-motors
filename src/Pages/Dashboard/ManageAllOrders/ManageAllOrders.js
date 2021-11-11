@@ -57,7 +57,7 @@ const ManageAllOrders = () => {
               <TableCell align="left">{row.email}</TableCell>
               <TableCell align="left">{row.address}</TableCell>
               <TableCell align="left">{row.phone}</TableCell>
-              <TableCell align="left"><Button onClick={() => handleDeleteOrder(row._id)} variant="contained">Delete</Button></TableCell>
+              <TableCell align="left"><Button style={{backgroundColor: '#232628', borderRadius: '0px'}} onClick={() => handleDeleteOrder(row._id)} variant="contained">Delete</Button></TableCell>
               
             </TableRow>
           ))}

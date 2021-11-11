@@ -1,0 +1,18 @@
+.dashboard-text-1 {
+    color: white;
+    background-color: #232628;
+    padding: 15px 0px;
+    margin-bottom: 50px;
+}
+
+.dashboard-text {
+    font-weight: bold;
+    padding: 15px 0;
+    text-decoration: none;
+    color: white;
+}
+
+.dashboard-text:hover {
+    background-color: #232628;
+    color: white;
+}

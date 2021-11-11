@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import './AddProduct.css';
 
 
 
@@ -51,7 +52,14 @@ const AddProducts = () => {
             placeholder="Price"
             required
           />          
-          <input type="submit" value="Add a Product" />
+          <input style={{
+                backgroundColor: "#232628",
+                border: "none",
+                color: "white",
+                fontWeight: "bold",
+              }} 
+              type="submit" 
+              value="Add a Product" />
         </form>
       </div>
         </div>

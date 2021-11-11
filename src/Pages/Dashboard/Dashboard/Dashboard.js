@@ -14,8 +14,8 @@ import {
     Switch,
     Route,
   
-    useParams,
-    useRouteMatch
+    useRouteMatch,
+    NavLink
   } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Button} from "@mui/material";
@@ -27,6 +27,8 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 import AddProducts from "../AddProducts/AddProducts";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
+import dashboardLogo from '../../../images/logo/benz-motors.png';
+import './Dashboard.css';
 const drawerWidth = 200;
 
 function Dashboard(props) {
@@ -40,19 +42,23 @@ function Dashboard(props) {
   };
 
   const drawer = (
-    <div>
+    <div style={{backgroundColor: '#4971FF'}}>
       <Toolbar />
       <Divider />
-      <Link style={{display: 'block'}} to="/explore"><Button color="inherit">Explore</Button></Link>
-      <Link style={{display: 'block'}}  to={`${url}/myorder`}><Button color="inherit">My Orders</Button></Link>
-      <Link to={`${url}/payment`}><Button color="inherit">Payment</Button></Link>
-      <Link style={{display: 'block'}}  to={`${url}/reviews`}><Button color="inherit">Reviews</Button></Link>
+      <Typography className="dashboard-text-1" variant="h6" noWrap component="div">
+          Dashboard
+      </Typography>
+      <Link className="dashboard-text" style={{display: 'block', }} to="/explore">Explore</Link>
+      <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/myorder`}>My Orders</Link>
+      <Link className="dashboard-text" style={{display: 'block', }} to={`${url}/payment`}>Payment</Link>
+      <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/reviews`}>Reviews</Link>
       {admin && <Box>
-        <Link style={{display: 'block'}}  to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
-        <Link style={{display: 'block'}}  to={`${url}/addProducts`}><Button color="inherit">Add Products</Button></Link>
-        <Link style={{display: 'block'}}  to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link>
+        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/makeAdmin`}>Make Admin</Link>
+        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/addProducts`}>Add Products</Link>
+        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/manageAllOrders`}>Manage All Orders</Link>
           </Box>}
-      <Button onClick={logOut} variant="contained">Logout</Button>
+      <Button style={{backgroundColor: '#232628', fontWeight: 'bold', borderRadius: '0px', width: '100%', padding: '15px 0px', marginTop: '150px'}} onClick={logOut} variant="contained">Logout</Button>
+      
     </div>
   );
 
@@ -69,7 +75,7 @@ function Dashboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar style={{backgroundColor: '#232628'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -79,8 +85,12 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
+          <div>
+            <NavLink to="/home"><img style={{ height: "65px" }} src={dashboardLogo} alt="" /></NavLink>
+          </div>
           <Typography variant="h6" noWrap component="div">
-            Dashboard
+          
+            
           </Typography>
         </Toolbar>
       </AppBar>

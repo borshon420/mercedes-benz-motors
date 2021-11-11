@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
-
+    
     const handleOnBlur = e =>{
         const user = {email};
         console.log(user);
@@ -19,6 +19,7 @@ const MakeAdmin = () => {
             if(data.modifiedCount > 0){
                 console.log(data)
                 alert('Created admin successfully')
+                
             }
         })
         setEmail(e.target.value);
@@ -37,7 +38,7 @@ const MakeAdmin = () => {
                 type="email"
                 onBlur={handleOnBlur} 
                 variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+                <Button style={{backgroundColor: '#232628'}} type="submit" variant="contained">Make Admin</Button>
             </form>
         </div>
     );
