@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import BuyNow from './Pages/Home/BuyNow/BuyNow';
-import Products from './Pages/Home/Products/Products';
 import Explore from './Pages/Explore/Explore/Explore';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';

@@ -2,6 +2,7 @@ import { Button, CircularProgress, Container, Grid, TextField, Typography, Alert
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import registerLogo from '../../../images/login/1.svg';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -22,7 +23,7 @@ const Register = () => {
   };
     return (
         <Container>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{mt:10}}>
         <Grid item xs={12} md={6} sx={{mt:8}}>
           <Typography variant="body1" gutterBottom>
             Register
@@ -55,7 +56,7 @@ const Register = () => {
               variant="standard"
             />
             
-            <Button style={{ backgroundColor: "#37B5BB" }} sx={{width: '75%', m:1}} type="Submit" variant="contained">Register</Button>
+            <Button style={{backgroundColor: '#232628', borderRadius: '0px'}} sx={{width: '75%', m:1}} type="Submit" variant="contained">Register</Button>
             <NavLink style={{textDecoration: 'none'}} to="/login">
             <Button variant="text">Already Registered? Please Login</Button>
             </NavLink>
@@ -63,7 +64,9 @@ const Register = () => {
           {isLoading && <CircularProgress />}
           {user?.email && <Alert severity="success">User Created Successfully!</Alert>}
         </Grid>
-        
+        <Grid item xs={12} md={6}>
+          <img style={{width: '100%'}} src={registerLogo} alt="" />
+        </Grid>
       </Grid>
     </Container>
     );

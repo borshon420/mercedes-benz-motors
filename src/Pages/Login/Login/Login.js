@@ -3,6 +3,7 @@ import { Button, Container, Grid, TextField, Typography, CircularProgress, Alert
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
+import car from '../../../images/login/1.svg';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
@@ -38,7 +39,7 @@ const Login = () => {
     return (
         <div>
              <Container>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{mt: 10}}>
         <Grid item xs={12} md={6} sx={{mt:8}}>
           <Typography variant="body1" gutterBottom>
             Login
@@ -61,16 +62,17 @@ const Login = () => {
               onChange={handleOnChnage}
               variant="standard"
             />
-            <Button style={{ backgroundColor: "#37B5BB" }} sx={{width: '75%', m:1}} type="Submit" variant="contained">Login</Button>
+            <Button style={{backgroundColor: '#232628', borderRadius: '0px'}} sx={{width: '75%', m:1}} type="Submit" variant="contained">Login</Button>
             <NavLink style={{textDecoration: 'none'}} to="/register">
-            <Button variant="text">New User? Please Register</Button>
+            <Button style={{fontWeight: 'bold'}} variant="text">New User? Please Register</Button>
             </NavLink>
             {isLoading && <CircularProgress />}
           
           </form>
-          
         </Grid>
-        
+        <Grid item xs={12} md={6}>
+          <img style={{width: '100%'}} src={car} alt="" />
+        </Grid>
       </Grid>
     </Container>
             <div style={{display: 'none'}}>
