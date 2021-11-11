@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import { useForm } from "react-hook-form";
+import './Review.css';
 
 const Review = () => {
     const {user} = useAuth();
@@ -25,7 +26,7 @@ const Review = () => {
     return (
         <div>
             <h1>All reviews here</h1>
-            <div className="buying-form">
+            <div className="review-form">
       <form onSubmit={handleSubmit(onSubmit)}>
           <input
             defaultValue={user.displayName}

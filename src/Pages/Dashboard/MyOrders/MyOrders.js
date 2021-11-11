@@ -36,7 +36,7 @@ const MyOrders = () => {
         <div>
             <h1>My all orders: {products.length}</h1>
             <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell align="left">Name</TableCell>
