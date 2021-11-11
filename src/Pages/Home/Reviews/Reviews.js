@@ -6,8 +6,15 @@ import review3 from "../../../images/reviews/3.png";
 import "./Reviews.css";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
+import SingleReview from "../SingleReview/SingleReview";
 
 const Reviews = () => {
+  const [reviews, setReviews] = React.useState([]);
+    React.useEffect(()=>{
+        fetch('http://localhost:5000/reviews')
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    },[])
   return (
     <div className="my-5">
       <h1 className="my-5">MERCEDES BENZ <span style={{ color: "#FFB129" }}>REVIEWS</span></h1>
@@ -63,6 +70,15 @@ const Reviews = () => {
             </Box>
           </Card.Body>
         </Card>
+      </Container>
+      <h1 className="my-5">LEATEST <span style={{ color: "#FFB129" }}>REVIEWS</span></h1>
+      <Container className="review-conteiner">
+          {
+            reviews.map(review => <SingleReview 
+              key={review._id}
+              review={review}
+              ></SingleReview>)
+          }    
       </Container>
     </div>
   );

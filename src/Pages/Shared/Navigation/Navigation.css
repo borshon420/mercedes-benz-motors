@@ -1,0 +1,23 @@
+.logo-size img{
+    width: 400px;
+}
+
+.nav-style a{
+    text-decoration: none;
+    color: white;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+.nav-style button{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+ /* Make Responsive */
+ @media only screen and (max-width: 688px) {
+    .logo-size img{
+        width: 200px;
+    }
+  }

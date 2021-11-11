@@ -73,7 +73,7 @@ const BuyNow = () => {
             required
           />
           <input
-            type="numer"
+            type="number"
             {...register("phone")}
             placeholder="Phone"
             required
