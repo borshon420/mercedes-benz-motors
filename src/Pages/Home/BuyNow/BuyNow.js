@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Card, Container, Button } from "react-bootstrap";
-import Navigation from '../../Shared/Navigation/Navigation';
-import useAuth from '../../../hooks/useAuth';
+import Navigation from "../../Shared/Navigation/Navigation";
+import useAuth from "../../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
-import './BuyNow.css';
+import "./BuyNow.css";
+import exploreLogo from "../../../images/logo/benz-motors.png";
 
 const BuyNow = () => {
-  const {user} = useAuth();
+  const { user } = useAuth();
   const [details, setDetails] = useState({});
   const { register, handleSubmit } = useForm();
   const { id } = useParams();
@@ -18,7 +19,7 @@ const BuyNow = () => {
       .then((data) => setDetails(data));
   }, []);
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     fetch(`http://localhost:5000/orders`, {
       method: "POST",
       headers: {
@@ -32,56 +33,68 @@ const BuyNow = () => {
           alert("Orders Proceed Successfully");
         }
       });
-    console.log(data)
+    console.log(data);
   };
   return (
     <>
-    <div>
-      <Navigation></Navigation>
-    </div>
-    <div className="product-info">
-      <div className="product-details">
-      <Container>
-        <Card className="buying-card">
-          <Card.Img variant="top" src={details.img} />
-          <Card.Body>
-            <Card.Title>{details.name}</Card.Title>
-            <Card.Text>{details.description}</Card.Text>
-            <Card.Title>Price: ${details.price}</Card.Title>
-          </Card.Body>
-        </Card>
-      </Container>
+      <div>
+        <Navigation></Navigation>
       </div>
-      <div className="buying-form">
-      <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            defaultValue={user.displayName}
-            {...register("name", { required: true, maxLength: 20 })}
-            placeholder="Name"
-          />
-          <input
-            defaultValue={user.email}
-            {...register("email")}
-            placeholder="Username or Email"
-          />
-          {/* <input type="text" {...register("address")} placeholder="address" required/> */}
+      <div className="product-info">
+        <div className="product-details">
+          <Container>
+            <Card className="buying-card">
+              <Card.Img variant="top" src={details.img} />
+              <Card.Body>
+                <Card.Title>{details.name}</Card.Title>
+                <Card.Text>{details.description}</Card.Text>
+                <Card.Title>Price: ${details.price}</Card.Title>
+              </Card.Body>
+            </Card>
+          </Container>
+        </div>
+        <div className="buying-form">
+          <div>
+            <img style={{ height: "100px" }} src={exploreLogo} alt="" />
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              defaultValue={user.displayName}
+              {...register("name", { required: true, maxLength: 20 })}
+              placeholder="Name"
+            />
+            <input
+              defaultValue={user.email}
+              {...register("email")}
+              placeholder="Username or Email"
+            />
+            {/* <input type="text" {...register("address")} placeholder="address" required/> */}
 
-          <input
-            type="text"
-            {...register("address")}
-            placeholder="Address"
-            required
-          />
-          <input
-            type="number"
-            {...register("phone")}
-            placeholder="Phone"
-            required
-          />
-          <input type="submit" value="Buy Now" />
-        </form>
+            <input
+              type="text"
+              {...register("address")}
+              placeholder="Address"
+              required
+            />
+            <input
+              type="number"
+              {...register("phone")}
+              placeholder="Phone"
+              required
+            />
+            <input
+              style={{
+                backgroundColor: "#4971FF",
+                border: "none",
+                color: "white",
+                fontWeight: "bold",
+              }}
+              type="submit"
+              value="Buy Now"
+            />
+          </form>
+        </div>
       </div>
-    </div>
     </>
   );
 };

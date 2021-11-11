@@ -39,7 +39,9 @@ const Footer = () => {
           </div>
         </Container>
         
+        <div>
         <p style={{color: 'white'}}>Copyright © 2021. All Rights reserved by Borshon Arafat</p>
+        </div>
       </div>
     </div>
   );

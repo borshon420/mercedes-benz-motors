@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Product from "../../Home/Product/Product";
+import Footer from "../../Shared/Footer/Footer";
 import Navigation from "../../Shared/Navigation/Navigation";
+import './Explore.css';
 
 
 const Explore = () => {
@@ -15,11 +17,11 @@ const Explore = () => {
         <div>
             <Navigation></Navigation>
             <div>
-            <div className="my-5">
-            <h2>RECENT <span style={{ color: "#FFB129" }}>CARS</span></h2>
-        </div>
+                <div className="explore-content">
+                <Container><h2>OUR RECENT <span style={{ color: "#4971FF" }}>CARS</span></h2></Container>
+            </div>
         <Container>
-        <div className="products-container">
+        <div className="products-container my-5">
         {products.map((product) => (
           <Product 
           key={product._id} 
@@ -29,6 +31,7 @@ const Explore = () => {
         </div>
         </Container>
     </div>
+    <Footer></Footer>
         </div>
     );
 };
