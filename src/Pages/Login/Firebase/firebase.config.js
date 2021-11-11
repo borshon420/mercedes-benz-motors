@@ -4,7 +4,7 @@ const firebaseConfig = {
     projectId: "mercedes-benz-2915c",
     storageBucket: "mercedes-benz-2915c.appspot.com",
     messagingSenderId: "744682716607",
-    appId: "1:744682716607:web:1eb6be22118ed000a0350a"
+    appId: "1:744682716607:web:1eb6be22118ed000a0350a",
   };
 
 export default firebaseConfig;  

@@ -29,6 +29,7 @@ import AddProducts from "../AddProducts/AddProducts";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
 import dashboardLogo from '../../../images/logo/benz-motors.png';
 import './Dashboard.css';
+import ManageProducts from "./ManageProducts/ManageProducts";
 const drawerWidth = 200;
 
 function Dashboard(props) {
@@ -56,6 +57,7 @@ function Dashboard(props) {
         <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/makeAdmin`}>Make Admin</Link>
         <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/addProducts`}>Add Products</Link>
         <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/manageAllOrders`}>Manage All Orders</Link>
+        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/manageProducts`}>Manage Products</Link>
           </Box>}
       <Button style={{backgroundColor: '#232628', fontWeight: 'bold', borderRadius: '0px', width: '100%', padding: '15px 0px', marginTop: '150px'}} onClick={logOut} variant="contained">Logout</Button>
       
@@ -156,6 +158,9 @@ function Dashboard(props) {
         </AdminRoute>
         <AdminRoute path={`${path}/manageAllOrders`}>
           <ManageAllOrders></ManageAllOrders>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manageProducts`}>
+          <ManageProducts></ManageProducts>
         </AdminRoute>
         <Route path={`${path}/myorder`}>
           <MyOrders></MyOrders>
