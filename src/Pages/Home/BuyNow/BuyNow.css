@@ -4,6 +4,7 @@
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: #232628;
+  height: 800px;
 }
 
 .buying-form {
@@ -43,6 +44,7 @@
 @media only screen and (max-width: 688px) {
   .buying-form {
       height: 500px;
+      background-color: #232628;
   }
   .buying-form input, textarea {
       width: 100%;

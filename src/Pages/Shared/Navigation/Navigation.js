@@ -14,6 +14,7 @@ const Navigation = () => {
         collapseOnSelect
         expand="lg"
         style={{ backgroundColor: "#232628" }}
+        variant="dark"
       >
         <Container className="nav-style">
           <NavLink
