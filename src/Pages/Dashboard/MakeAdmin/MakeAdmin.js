@@ -6,7 +6,7 @@ const MakeAdmin = () => {
 
   const handleOnBlur = (e) => {
     const user = { email };
-    console.log(user);
+    
     fetch("https://powerful-forest-52418.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
@@ -17,7 +17,7 @@ const MakeAdmin = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          console.log(data);
+          
           alert("Created admin successfully");
         }
       });

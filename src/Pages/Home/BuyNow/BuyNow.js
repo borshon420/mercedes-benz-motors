@@ -33,7 +33,7 @@ const BuyNow = () => {
           alert("Orders Proceed Successfully");
         }
       });
-    console.log(data);
+    
   };
   return (
     <>

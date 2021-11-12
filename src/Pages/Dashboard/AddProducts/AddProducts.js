@@ -19,7 +19,7 @@ const AddProducts = () => {
           alert("Product added successfully");
         }
       });
-    console.log(data);
+    
   };
   return (
     <div>

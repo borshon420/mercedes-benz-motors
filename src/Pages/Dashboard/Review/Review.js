@@ -21,7 +21,7 @@ const Review = () => {
           alert("Review Proceed Successfully");
         }
       });
-    console.log(data);
+    
   };
   return (
     <div>
