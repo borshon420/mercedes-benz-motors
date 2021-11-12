@@ -11,13 +11,13 @@ import { Button } from '@mui/material';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/products/explore')
+        fetch('https://powerful-forest-52418.herokuapp.com/products/explore')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[]);
 
     const handleDleteProduct = (id) =>{
-        fetch(`http://localhost:5000/products/${id}`,{
+        fetch(`https://powerful-forest-52418.herokuapp.com/products/${id}`,{
             method: 'DELETE',
 
         })

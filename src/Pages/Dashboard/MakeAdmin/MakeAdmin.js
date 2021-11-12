@@ -7,7 +7,7 @@ const MakeAdmin = () => {
     const handleOnBlur = e =>{
         const user = {email};
         console.log(user);
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://powerful-forest-52418.herokuapp.com/users/admin',{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

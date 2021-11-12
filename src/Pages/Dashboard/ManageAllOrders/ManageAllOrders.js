@@ -12,14 +12,14 @@ const ManageAllOrders = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/orders/name`
+        const url = `https://powerful-forest-52418.herokuapp.com/orders/name`
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))
     },[]);
 
     const handleDeleteOrder = (id) => {
-        fetch(`http://localhost:5000/orders/${id}`,{
+        fetch(`https://powerful-forest-52418.herokuapp.com/orders/${id}`,{
             method: 'DELETE',
 
         })
@@ -30,6 +30,10 @@ const ManageAllOrders = () => {
             }
           });
     }
+
+
+    
+    
     return (
         <div>
             <h1>Manage all orders: {products.length}</h1>
@@ -58,7 +62,6 @@ const ManageAllOrders = () => {
               <TableCell align="left">{row.address}</TableCell>
               <TableCell align="left">{row.phone}</TableCell>
               <TableCell align="left"><Button style={{backgroundColor: '#232628', borderRadius: '0px'}} onClick={() => handleDeleteOrder(row._id)} variant="contained">Delete</Button></TableCell>
-              
             </TableRow>
           ))}
         </TableBody>

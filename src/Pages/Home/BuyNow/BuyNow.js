@@ -14,13 +14,13 @@ const BuyNow = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://powerful-forest-52418.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, []);
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/orders`, {
+    fetch(`https://powerful-forest-52418.herokuapp.com/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

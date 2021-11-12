@@ -8,7 +8,7 @@ const Review = () => {
   const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://powerful-forest-52418.herokuapp.com/reviews`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -49,7 +49,7 @@ const Review = () => {
           <input
             type="number"
             {...register("rattings")}
-            placeholder="Rattings"
+            placeholder="Rattings 0-5"
             required
           />
           

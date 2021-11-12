@@ -14,14 +14,14 @@ const MyOrders = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://powerful-forest-52418.herokuapp.com/orders?email=${user.email}`
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))
     },[]);
 
     const handleDeleteOrder = (id) => {
-        fetch(`http://localhost:5000/orders/${id}`,{
+        fetch(`https://powerful-forest-52418.herokuapp.com/orders/${id}`,{
             method: 'DELETE',
 
         })
