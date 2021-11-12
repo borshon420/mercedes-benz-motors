@@ -19,4 +19,4 @@
 • MongoDb\
 • React\
 • Express\
-• Node\
+• Node
