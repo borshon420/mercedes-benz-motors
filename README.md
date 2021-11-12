@@ -11,11 +11,12 @@
 • If you Order something you can see your order on the Dashboard. You can see your information about the order.\
 • If you want to cancel your order. You can calcel it by clicking Delete Button. Your order will delete from the database.\
 • You can also see Review and Payment Option on the dashboard.\
+• You can give review and this review will show on the home page with your email, name, description and rattings.\
 • This Dashboard have a Admin Option. Normal user don't see the admin panel. \
 • If you have a admin access you can see 4 more options. Make Admin, Add Products, Manage Orders, Manage Products. If you are admin you can create Admin, Add Product, Delete Product, Delete Orders.
 
 ###  Create With...
-• MongoDb
-• React
-• Express
-• Node
+• MongoDb\
+• React\
+• Express\
+• Node\
