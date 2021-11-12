@@ -3,7 +3,6 @@ import { Spinner } from "react-bootstrap";
 import { Redirect, Route } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 
-
 const AdminRoute = ({ children, ...rest }) => {
   const { user, isLoading, admin } = useAuth();
   console.log(user);

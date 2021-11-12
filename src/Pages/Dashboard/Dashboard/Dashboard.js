@@ -10,15 +10,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-  
-    useRouteMatch,
-    NavLink
-  } from "react-router-dom";
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useRouteMatch,
+  NavLink,
+} from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Button} from "@mui/material";
+import { Button } from "@mui/material";
 import Pay from "../Pay/Pay";
 import MyOrders from "../MyOrders/MyOrders";
 import Review from "../Review/Review";
@@ -27,13 +26,13 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 import AddProducts from "../AddProducts/AddProducts";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
-import dashboardLogo from '../../../images/logo/benz-motors.png';
-import './Dashboard.css';
+import dashboardLogo from "../../../images/logo/benz-motors.png";
+import "./Dashboard.css";
 import ManageProducts from "./ManageProducts/ManageProducts";
 const drawerWidth = 200;
 
 function Dashboard(props) {
-    const {logOut, admin} = useAuth();
+  const { logOut, admin } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
@@ -43,24 +42,91 @@ function Dashboard(props) {
   };
 
   const drawer = (
-    <div style={{backgroundColor: '#4971FF'}}>
+    <div style={{ backgroundColor: "#4971FF" }}>
       <Toolbar />
       <Divider />
-      <Typography className="dashboard-text-1" variant="h6" noWrap component="div">
-          Dashboard
+      <Typography
+        className="dashboard-text-1"
+        variant="h6"
+        noWrap
+        component="div"
+      >
+        Dashboard
       </Typography>
-      <Link className="dashboard-text" style={{display: 'block', }} to="/explore">Explore</Link>
-      <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/myorder`}>My Orders</Link>
-      <Link className="dashboard-text" style={{display: 'block', }} to={`${url}/payment`}>Payment</Link>
-      <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/reviews`}>Reviews</Link>
-      {admin && <Box>
-        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/makeAdmin`}>Make Admin</Link>
-        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/addProducts`}>Add Products</Link>
-        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/manageAllOrders`}>Manage All Orders</Link>
-        <Link className="dashboard-text" style={{display: 'block', }}  to={`${url}/manageProducts`}>Manage Products</Link>
-          </Box>}
-      <Button style={{backgroundColor: '#232628', fontWeight: 'bold', borderRadius: '0px', width: '100%', padding: '15px 0px', marginTop: '150px'}} onClick={logOut} variant="contained">Logout</Button>
-      
+      <Link
+        className="dashboard-text"
+        style={{ display: "block" }}
+        to="/explore"
+      >
+        Explore
+      </Link>
+      <Link
+        className="dashboard-text"
+        style={{ display: "block" }}
+        to={`${url}/myorder`}
+      >
+        My Orders
+      </Link>
+      <Link
+        className="dashboard-text"
+        style={{ display: "block" }}
+        to={`${url}/payment`}
+      >
+        Payment
+      </Link>
+      <Link
+        className="dashboard-text"
+        style={{ display: "block" }}
+        to={`${url}/reviews`}
+      >
+        Reviews
+      </Link>
+      {admin && (
+        <Box>
+          <Link
+            className="dashboard-text"
+            style={{ display: "block" }}
+            to={`${url}/makeAdmin`}
+          >
+            Make Admin
+          </Link>
+          <Link
+            className="dashboard-text"
+            style={{ display: "block" }}
+            to={`${url}/addProducts`}
+          >
+            Add Products
+          </Link>
+          <Link
+            className="dashboard-text"
+            style={{ display: "block" }}
+            to={`${url}/manageAllOrders`}
+          >
+            Manage All Orders
+          </Link>
+          <Link
+            className="dashboard-text"
+            style={{ display: "block" }}
+            to={`${url}/manageProducts`}
+          >
+            Manage Products
+          </Link>
+        </Box>
+      )}
+      <Button
+        style={{
+          backgroundColor: "#232628",
+          fontWeight: "bold",
+          borderRadius: "0px",
+          width: "100%",
+          padding: "15px 0px",
+          marginTop: "150px",
+        }}
+        onClick={logOut}
+        variant="contained"
+      >
+        Logout
+      </Button>
     </div>
   );
 
@@ -77,7 +143,7 @@ function Dashboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar style={{backgroundColor: '#232628'}}>
+        <Toolbar style={{ backgroundColor: "#232628" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -88,12 +154,11 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <div>
-            <NavLink to="/home"><img style={{ height: "65px" }} src={dashboardLogo} alt="" /></NavLink>
+            <NavLink to="/home">
+              <img style={{ height: "65px" }} src={dashboardLogo} alt="" />
+            </NavLink>
           </div>
-          <Typography variant="h6" noWrap component="div">
-          
-            
-          </Typography>
+          <Typography variant="h6" noWrap component="div"></Typography>
         </Toolbar>
       </AppBar>
       <Box
@@ -144,32 +209,32 @@ function Dashboard(props) {
       >
         <Toolbar />
         <Switch>
-        <Route exact path={path}>
-          <MyOrders></MyOrders>
-        </Route>
-        <Route path={`${path}/payment`}>
-          <Pay></Pay>
-        </Route>
-        <AdminRoute path={`${path}/makeAdmin`}>
-          <MakeAdmin></MakeAdmin>
-        </AdminRoute>
-        <AdminRoute path={`${path}/addProducts`}>
-          <AddProducts></AddProducts>
-        </AdminRoute>
-        <AdminRoute path={`${path}/manageAllOrders`}>
-          <ManageAllOrders></ManageAllOrders>
-        </AdminRoute>
-        <AdminRoute path={`${path}/manageProducts`}>
-          <ManageProducts></ManageProducts>
-        </AdminRoute>
-        <Route path={`${path}/myorder`}>
-          <MyOrders></MyOrders>
-        </Route>
-        <Route path={`${path}/reviews`}>
-          <Review></Review>
-        </Route>
-      </Switch>
-       </Box>
+          <Route exact path={path}>
+            <MyOrders></MyOrders>
+          </Route>
+          <Route path={`${path}/payment`}>
+            <Pay></Pay>
+          </Route>
+          <AdminRoute path={`${path}/makeAdmin`}>
+            <MakeAdmin></MakeAdmin>
+          </AdminRoute>
+          <AdminRoute path={`${path}/addProducts`}>
+            <AddProducts></AddProducts>
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageAllOrders`}>
+            <ManageAllOrders></ManageAllOrders>
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageProducts`}>
+            <ManageProducts></ManageProducts>
+          </AdminRoute>
+          <Route path={`${path}/myorder`}>
+            <MyOrders></MyOrders>
+          </Route>
+          <Route path={`${path}/reviews`}>
+            <Review></Review>
+          </Route>
+        </Switch>
+      </Box>
     </Box>
   );
 }

@@ -1,13 +1,13 @@
 .explore-content {
-    background-color: #232628;
-    height: 300px;
-    margin-bottom: 100px;
+  background-color: #232628;
+  height: 300px;
+  margin-bottom: 100px;
 }
 
 .explore-content h2 {
-    text-align: left;
-    padding-top: 100px;
-    color: white;
-    font-weight: 700;
-    font-style: italic;
+  text-align: left;
+  padding-top: 100px;
+  color: white;
+  font-weight: 700;
+  font-style: italic;
 }

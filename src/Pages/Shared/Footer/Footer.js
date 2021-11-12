@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Container } from "react-bootstrap";
-import footerLogo from '../../../images/logo/benz-motors.png';
+import footerLogo from "../../../images/logo/benz-motors.png";
 const Footer = () => {
   return (
     <div>
@@ -38,9 +38,11 @@ const Footer = () => {
             <p>Sunday: Closed</p>
           </div>
         </Container>
-        
+
         <div>
-        <p style={{color: 'white'}}>Copyright © 2021. All Rights reserved by Borshon Arafat</p>
+          <p style={{ color: "white" }}>
+            Copyright © 2021. All Rights reserved by Borshon Arafat
+          </p>
         </div>
       </div>
     </div>
