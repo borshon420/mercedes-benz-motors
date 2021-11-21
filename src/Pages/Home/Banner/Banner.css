@@ -4,3 +4,14 @@
   background-repeat: no-repeat;
   height: 800px;
 }
+
+/* Make Responsive */
+@media only screen and (max-width: 688px) {
+  .banner-img {
+    background-image: url("https://images.pexels.com/photos/6152812/pexels-photo-6152812.jpeg?cs=srgb&dl=pexels-szymon-shields-6152812.jpg&fm=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+  }
+}
+
